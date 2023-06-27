@@ -1,7 +1,7 @@
 node {
     stage('Build') {
         docker.image('node:lts-buster-slim').inside {
-            if (changedFile().contains('package.json')) {
+            if (changedFiles().contains('package.json')) {
                 sh 'npm install'
             }
         }
