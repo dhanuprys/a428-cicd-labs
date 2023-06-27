@@ -6,7 +6,7 @@ node {
         stage('Test') {
             sh './jenkins/scripts/test.sh'
         }
-        stage('Approval') {
+        stage('Manual Approval') {
             input message: 'Lanjutkan ke tahap Deploy?'
         }
         stage('Deploy') {
